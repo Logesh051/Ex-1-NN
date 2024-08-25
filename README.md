@@ -1,7 +1,7 @@
-<H3>ENTER YOUR NAME</H3>
-<H3>ENTER YOUR REGISTER NO.</H3>
-<H3>EX. NO.1</H3>
-<H3>DATE</H3>
+<H3>ENTER YOUR NAME       : Logesh.N.A</H3>
+<H3>ENTER YOUR REGISTER NO:212223240078</H3>
+<H3>EX.NO:1</H3>
+<H3>DATE : 23.08.2024</H3>
 <H1 ALIGN =CENTER> Introduction to Kaggle and Data preprocessing</H1>
 
 ## AIM:
@@ -37,11 +37,65 @@ STEP 5:Normalizing the data<BR>
 STEP 6:Splitting the data into test and train<BR>
 
 ##  PROGRAM:
-TYPE YOUR CODE HERE
+```
+import pandas as pd
+import io
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split
 
+# Load the dataset
+data = pd.read_csv("Churn_Modelling.csv")
 
+# Extract features and labels
+X = data.iloc[:,:-1].values
+y = data.iloc[:,-1].values
+
+# Drop unnecessary columns
+data = data.drop(['Surname', 'Geography', 'Gender'], axis=1)
+
+# Scale the data
+scaler = MinMaxScaler()
+df1 = pd.DataFrame(scaler.fit_transform(data))
+
+# Split the dataset into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+# Print outputs
+print("Original Dataset:")
+print(data.head())  # Display the first few rows of the dataset after dropping columns
+print("\n")
+
+print("Training Features (X_train):")
+print(X_train[:5])  # Display the first 5 rows of the training features
+print("\n")
+
+print("Test Features (X_test):")
+print(X_test[:5])  # Display the first 5 rows of the test features
+print("\n")
+
+print("Training Labels (y_train):")
+print(y_train[:5])  # Display the first 5 training labels
+print("\n")
+
+print("Test Labels (y_test):")
+print(y_test[:5])  # Display the first 5 test labels
+print("\n")
+
+print("Length of X_test:", len(X_test))  # Display the length of X_test
+
+```
 ## OUTPUT:
-SHOW YOUR OUTPUT HERE
+### Dataset:
+![Screenshot 2024-08-23 094705](https://github.com/user-attachments/assets/7aeceb69-ed89-4ba0-b535-8d1885c08abc)
+### Training Features (x_train):
+![Screenshot 2024-08-23 094713](https://github.com/user-attachments/assets/7e615dda-5bfc-4be3-8855-934e12f6e553)
+### Test Features (x_test):
+![Screenshot 2024-08-23 094719](https://github.com/user-attachments/assets/aee1b82d-e94a-41fe-b225-a13b3ac33978)
+### Training Labels (y_train) and Test Labels (y_test):
+![Screenshot 2024-08-23 094723](https://github.com/user-attachments/assets/884fc406-dfa5-499c-bc43-13439fbd6f93)
+### Length of X_test:
+![Screenshot 2024-08-23 094727](https://github.com/user-attachments/assets/bf5f4753-6776-4f34-a0b9-b66ecf029036)
+
 
 
 ## RESULT:
