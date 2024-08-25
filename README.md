@@ -2,8 +2,8 @@
 <H3>ENTER YOUR NAME       : Logesh.N.A</H3>
 <H3>ENTER YOUR REGISTER NO: 212223240078</H3>
 <H3>DATE : 23.08.2024</H3>
-## AIM:
 
+## AIM :
 To perform Data preprocessing in a data set downloaded from Kaggle
 
 ## EQUIPMENTS REQUIRED:
